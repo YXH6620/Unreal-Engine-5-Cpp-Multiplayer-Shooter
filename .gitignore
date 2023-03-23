@@ -9,12 +9,8 @@ Build
 **/ThirdPersonBP
 **/LearningKit_Games
 **/MilitaryWeapSilver
-**/AnimStarterPack
-**/Mixamo
-**/Animations
 **/StarterContent
-**/MarketplaceAssets
-**/BlasterMapMeshes
+
 .vscode
 .vs
 *.VC.db
