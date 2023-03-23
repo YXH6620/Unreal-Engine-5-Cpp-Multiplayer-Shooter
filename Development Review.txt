@@ -151,3 +151,20 @@ Version 1.21：
 
 *******************************************************************************************************
 
+Version 1.22：
+①开火（Fire）动作绑定，
+②建立Fire动画蒙太奇。设置Section Name，新建插槽WeaponSlot，Clear，暴露给蓝图进行设置。
+	//以下代码值得记忆
+	UAnimInstance* AnimInstance = GetMesh()->GetAnimInstance();
+	if (AnimInstance && FireWeaponMontage)
+	{
+		AnimInstance->Montage_Play(FireWeaponMontage);
+		FName SectionName;
+		SectionName = bAiming ? FName("RifleAim") : FName("RifleHip");
+		AnimInstance->Montage_JumpToSection(SectionName);
+	}
+③利用已经包含枪口火焰离子效果以及声音的 开火动画
+④开火粒子效果和声音需要网络同步，逻辑顺序为：开火摁键RPC->Server->Server广播RPC
+
+*******************************************************************************************************
+
