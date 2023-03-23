@@ -117,3 +117,10 @@ Version 1.16：
 
 *******************************************************************************************************
 
+Version 1.17：
+①行走、蹲伏、Idle下的Aiming动画状态机实现
+②Aim Offet前的九个方向动画的配置：Additive Settings->Additive Anim Type:Mesh Spcae->Base Pose Type:Selected animation frame->Zero Pose
+③设置AimOffset，有两个，分别是持枪和瞄准状态下的。
+④应用AimOffset，利用Layered blend per bone，设置混合骨骼为腰部骨骼spine_01，上下半身的混合；并将Yaw和Pitch暴露给动画蓝图进行混合。
+
+*******************************************************************************************************
