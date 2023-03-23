@@ -124,3 +124,8 @@ Version 1.17：
 ④应用AimOffset，利用Layered blend per bone，设置混合骨骼为腰部骨骼spine_01，上下半身的混合；并将Yaw和Pitch暴露给动画蓝图进行混合。
 
 *******************************************************************************************************
+
+Version 1.18：
+①网络序会对角度进行变换压缩，导致Server和Client同步的过程中出现数据不一致的情况，在Rotator.h中的CompressAxisToShort，因此需要在Client端接收到数据时进行处理
+②为每一种枪支这是Left'HandSocket，并进行FBRAK IK处理
+③原地旋转(Turning InPlace)：当Yaw大于90° 或 小于-90°，进行旋转，伴随着角色脚步的移动。动画状态机中判断的条件为ETurningInPlace，C++中设置 的。
