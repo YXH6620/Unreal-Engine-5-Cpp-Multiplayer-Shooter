@@ -4,8 +4,39 @@ Version 1.0：
 Version 1.1：
 ①创建角色类，绑定输入；
 
+*******************************************************************************************************
+
 Version 1.2：
 ①创建角色动画蓝图，建立角色动画状态机；
 ②继承UAnimInstance，重写NativeInitializeAnimation(初始化)和NativeUpdateAnimation(每帧)
 ③设定动画状态，并在动画蓝图中设定状态转移条件
 
+*******************************************************************************************************
+
+Version 1.3：
+①Non-Seamless Travel 切换地图：
+	（1）客户端断开或重连
+	（2）第一次加载地图
+	（3）第一次连接服务器
+	（4）结束多人游戏并开启新游戏
+②Seamless Traver
+	（1）更加丝滑切换~避免了重连的问题
+	（2）在GameMode中实现，bUse'SeamlessTravel=true。同时需要一个Transition map
+③多人游戏下的切换：
+	（1）UWorld::ServerTravel，旨在服务器上运行，在服务端切换地图，并且所有客户端都要跟随切换
+	（2）服务器会调用APlayerController::ClientTravel
+④实现：
+	（1）重写PostLogin
+	（2）切换地图，设置为监听服务器：
+	        bUseSeamlessTravel = true;
+	        World->ServerTravel(FString("/Game/Maps/BlasterMap?listen")); 
+	（3）Project Settings中设置Transition map
+	（4）新建GameMode的Blueprint，设置好我们的Character蓝图
+
+*******************************************************************************************************
+
+Version 1.4：
+①网络角色权限，可参考本人博客：https://blog.csdn.net/Jason6620/article/details/129677315?spm=1001.2014.3001.5501
+②创建OverheadWidget，用于显示角色权限信息
+	（1）Widget中设置的文本信息需要与C++中同名，同通过SetText等进行设置
+③FString::Printf(TEXT("%s"),*Role);
