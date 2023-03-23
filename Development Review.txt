@@ -232,3 +232,18 @@ Version 1.31：
 Version 1.32：
 ①创建接口，Character继承这个接口
 ②射线检测，检测物体为Character时判断是否继承接口，若是则改变准星颜色。
+		if (TraceHitResult.GetActor() && TraceHitResult.GetActor()->Implements<UInteractWithCrosshairsInterface>())
+		{
+			HUDPackage.CrosshairsColor = FLinearColor::Red;
+		}
+		else
+		{
+			HUDPackage.CrosshairsColor = FLinearColor::White;
+		}
+③射线不能对自己生效，采取准星前一点点的地方进行判定
+④解决摄像机离自己过近时遮挡视角，距离过近隐藏Mesh和枪支。
+
+*******************************************************************************************************
+
+
+
