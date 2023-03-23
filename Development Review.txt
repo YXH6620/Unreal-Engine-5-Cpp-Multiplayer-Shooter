@@ -200,3 +200,11 @@ Version 1.27：
 ⑤创建弹壳类，
 
 *******************************************************************************************************
+
+Version 1.28：
+①为弹壳设置：
+	AddImpluse 脉冲力
+	SetSimulatePhysics 物理
+	SetEnableGravity 重力
+	SetNotifyRigidBodyCollosion 刚体
+	OnHit：与子弹类似，播放声音等，销毁
