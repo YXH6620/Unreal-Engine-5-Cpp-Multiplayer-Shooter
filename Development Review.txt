@@ -1,0 +1,11 @@
+Version 1.0：
+①steam联网插件导入；UE初学者包美术资产导入，动作重定向；
+
+Version 1.1：
+①创建角色类，绑定输入；
+
+Version 1.2：
+①创建角色动画蓝图，建立角色动画状态机；
+②继承UAnimInstance，重写NativeInitializeAnimation(初始化)和NativeUpdateAnimation(每帧)
+③设定动画状态，并在动画蓝图中设定状态转移条件
+
