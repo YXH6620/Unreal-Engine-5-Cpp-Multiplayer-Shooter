@@ -129,3 +129,12 @@ Version 1.18：
 ①网络序会对角度进行变换压缩，导致Server和Client同步的过程中出现数据不一致的情况，在Rotator.h中的CompressAxisToShort，因此需要在Client端接收到数据时进行处理
 ②为每一种枪支这是Left'HandSocket，并进行FBRAK IK处理
 ③原地旋转(Turning InPlace)：当Yaw大于90° 或 小于-90°，进行旋转，伴随着角色脚步的移动。动画状态机中判断的条件为ETurningInPlace，C++中设置 的。
+
+*******************************************************************************************************
+
+Version 1.19：
+①网络更新频率：BP_BlasterCharacter下的Net Update Frequency，即Server Tick Rate
+②角色旋转速度
+③Jump打断Crouch
+
+*******************************************************************************************************
