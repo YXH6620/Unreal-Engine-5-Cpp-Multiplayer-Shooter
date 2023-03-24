@@ -290,3 +290,18 @@ void ABlasterHUD::AddCharacterOverlay()
 
 *******************************************************************************************************
 
+Version 1.36：
+①更新血量HUD：通过PlayerController->GetHUD()。
+②SetHUDHealth：算血量百分比
+		BlasterHUD->CharacterOverlay->HealthBar->SetPercent(HealthPercent);
+		FString HealthText = FString::Printf(TEXT("%d/%d"), FMath::CeilToInt(Health), FMath::CeilToInt(MaxHealth));
+		BlasterHUD->CharacterOverlay->HealthText->SetText(FText::FromString(HealthText));
+③在Character中，获取Controller来SetHUDHealth：
+	BlasterPlayerController = Cast<ABlasterPlayerController>(Controller);
+	if (BlasterPlayerController)
+	{
+		BlasterPlayerController->SetHUDHealth(Health, MaxHealth);
+	}
+
+*******************************************************************************************************
+
