@@ -305,3 +305,13 @@ Version 1.36：
 
 *******************************************************************************************************
 
+Version 1.37：
+①伤害Damage：
+	（1）为Projectile类的成员变量
+	（2）UGameplayStatics::ApplyDamage(OtherActor, Damage, OwnerController, this, UDamageType::StaticClass());通过Controller处理damage
+②接受伤害：
+	（1）Character->ReceiveDamage()，处理HUD更新、播放被击动画
+	（2）源码自带：OnTakeAnyDamage。是个广播委托，处理伤害
+	
+*******************************************************************************************************
+
