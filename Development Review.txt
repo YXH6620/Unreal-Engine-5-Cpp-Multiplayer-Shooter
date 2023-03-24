@@ -268,5 +268,25 @@ void UCombatComponent::Fire()
 
 *******************************************************************************************************
 
+Version 1.35：
+①Gameplay 框架：具体可参考本人博客：https://blog.csdn.net/Jason6620/article/details/129676204?spm=1001.2014.3001.5501
+	GameMode：保存Pawn、PlayerController、HUD，游戏规则。匹配状态
+	GameState：游戏状态（最高分玩家、领先队伍、队伍得分、玩家的各种状态）
+	PlayerState：得分、死亡数
+	PlayerController：访问HUD、更新信息、HUD、分数等
+②血量Health：
+	（1）网络复制Health会有延迟，所以把Health放在Character身上，有更快的速度
+	（2）添加血量HUD，并在Graph中设置C++为父类
+void ABlasterHUD::AddCharacterOverlay()
+{
+	APlayerController* PlayerController = GetOwningPlayerController();
+	if (PlayerController && CharacterOverlayClass)
+	{
+		CharacterOverlay = CreateWidget<UCharacterOverlay>(PlayerController, CharacterOverlayClass);
+		CharacterOverlay->AddToViewport();
+	}
+}
 
+
+*******************************************************************************************************
 
