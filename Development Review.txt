@@ -315,3 +315,23 @@ Version 1.37：
 	
 *******************************************************************************************************
 
+Version 1.38：
+①创建BlasterGamemode：处理角色死亡时的逻辑，并且更改原蓝图GameMode中的父类
+	virtual void PlayerEliminated(class ABlasterCharacter* ElimmedCharacter, class ABlasterPlayerController* VictimController, ABlasterPlayerController* AttackerController);
+②MultiCast_Elim Animation、广播
+③ElimTimer：
+	GetWorldTimerManager().SetTimer(
+		ElimTimer,
+		this,
+		&ABlasterCharacter::ElimTimerFinished,
+		ElimDelay
+	);
+④Gamemode中设置重生逻辑：
+	（1）Character需要Reset、Destroy
+	（2）轮询重生点
+	（3）Spawn Collision Handling Method：Try to Adjust Location, Bug Always Spawn
+
+⑤添加死亡时角色溶解材质效果
+
+*******************************************************************************************************
+
