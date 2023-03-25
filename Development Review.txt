@@ -423,3 +423,21 @@ Version 1.48：
 
 *******************************************************************************************************
 
+Version 1.49：
+①C&S GameTimer同步：
+	（1）1/2RTT：虽然不准确，但对于这个Demo来说足够了
+②***待研究***
+
+*******************************************************************************************************
+
+Version 1.50：
+①AGameModeBase：
+	（1）Default Classes
+	（2）Spawns Player's Pawn
+	（3）Restart Players
+	（4）Restart the Game
+②AGameMode：public AGameModeBase
+	（1）Match State（但大多数游戏都不需要匹配状态）
+	（2）Handling Match States
+	（3）Custom Match States
+
