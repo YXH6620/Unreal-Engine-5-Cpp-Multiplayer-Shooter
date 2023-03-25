@@ -405,3 +405,10 @@ Version 1.45：
 
 Version 1.46：
 ①修复了一个bug，在Reloading时不能fire
+②换子弹
+	（1）数量：Clamp(RoomInMag,0,min(RoomInMag,CarriedAmmo));，其中(RoomInMag为需要填充的子弹数，并且在剩余子弹与填充子弹中取min
+	（2）SetHUDCarriedAmmo
+
+*******************************************************************************************************
+
+
