@@ -479,6 +479,10 @@ Version 1.53：
 Version 1.54：
 ①custom matech state
 ②CoolDown Announcement：游戏结束之后有一段冷却时间，等待再次启动游戏
+	FString AnnouncementText("New Match Starts In:");
+③重启游戏：
+	Restart() override
+	重启时禁用输入，bDisableGameplay
 
 *******************************************************************************************************
 
