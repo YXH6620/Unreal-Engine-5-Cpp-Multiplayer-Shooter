@@ -440,4 +440,21 @@ Version 1.50：
 	（1）Match State（但大多数游戏都不需要匹配状态）
 	（2）Handling Match States
 	（3）Custom Match States
+③MatchState：
+	namespace MatchState
+		EnteringMap			HasMatchStarted()
+		WaitingToStart			HasMatchEnded()
+		InProgres (Only new state here!!!!)	GetMatchState()
+		WaitingPostMatch			SetMatchState()
+		LeavingMap			OnMatchStateSet()
+		Aborted				StartMatch()
+④Delayed Start
+	（1）Stay in the WaitingToStart State
+		· WarmupTime
+	（2）Call StartMatch()
+		· Transition to the InProgress State
+		· Spawn Characters
+
+*******************************************************************************************************
+
 
