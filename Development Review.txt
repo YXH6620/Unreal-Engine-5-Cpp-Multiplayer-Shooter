@@ -354,3 +354,18 @@ Version 1.41：
 
 *******************************************************************************************************
 
+Version 1.42：
+①创建BlasterPlayerState：
+	（1）内置Score，重写OnRep_Score
+	（2）通过Controller改写HUD中的Score
+	（3）PlayerEliminated中判断攻击者和受害者是否为同一个，若不是则攻击者加分AddToScore
+	（4）创建BP_BlasterPlayerState，设置GameMode
+	（5）PlayerState在第一帧是无效的。nulllptr，因此需要轮询做初始化。
+②加分与死亡得分计数逻辑
+	（1）SetScore 内置
+	（2）与①逻辑类似，PlayerEliminated中判断攻击者和受害者是否为同一个，若受害者是AddToDefeats
+	（3）PollInit轮询也需要更新Defeat
+	（4）
+
+*******************************************************************************************************
+
